@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class _WeaponController : MonoBehaviour
 {
-    int attackIndex;
+    public float attackIndex;
     bool isStrafe = false;
     bool canAttack = true;
 
@@ -31,17 +31,19 @@ public class _WeaponController : MonoBehaviour
         if(isStrafe == true)
         {
             GetComponent<_CharacterController>().MoveType=_CharacterController.MovementType.Strafe;
+            GetComponent<_IkLook>().Less();
         }
 
         if(isStrafe == false)
         {
             GetComponent<_CharacterController>().MoveType=_CharacterController.MovementType.Directional;
+            GetComponent<_IkLook>().Plus();
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && isStrafe==true && canAttack==true)
+        if(Input.GetKeyUp(KeyCode.Mouse0) && isStrafe==true && canAttack==true)
         {
-            attackIndex = Random.Range(0,3);
-            anim.SetInteger("AttackIndex",attackIndex);
+            attackIndex = Random.Range(0,6);
+            anim.SetFloat("AttackIndex",attackIndex);
             anim.SetTrigger("Attack");
         }
 
