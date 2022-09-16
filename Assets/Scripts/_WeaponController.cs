@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class _WeaponController : MonoBehaviour
 {
-    public float attackIndex;
+    // public float attackIndex;
+
     bool isStrafe = false;
     bool canAttack = true;
 
     Animator anim;
 
+    public GameObject trails;
     public GameObject handWeapon;
     public GameObject backWeapon;
 
@@ -17,6 +19,7 @@ public class _WeaponController : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        trailclose();
     }
 
     void Update()
@@ -42,8 +45,8 @@ public class _WeaponController : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Mouse0) && isStrafe==true && canAttack==true)
         {
-            attackIndex = Random.Range(0,6);
-            anim.SetFloat("AttackIndex",attackIndex);
+            // attackIndex = Random.Range(0,6);
+            // anim.SetFloat("AttackIndex",attackIndex);
             anim.SetTrigger("Attack");
         }
 
@@ -59,5 +62,21 @@ public class _WeaponController : MonoBehaviour
     {
         backWeapon.SetActive(true);
         handWeapon.SetActive(false);
+    }
+
+    public void trailopen()
+    {
+        for (int i = 0; i < trails.transform.childCount; i++)
+        {
+            trails.transform.GetChild(i).gameObject.GetComponent<TrailRenderer>().emitting = true;
+        }
+    }
+
+    public void trailclose()
+    {
+        for (int i = 0; i < trails.transform.childCount; i++)
+        {
+            trails.transform.GetChild(i).gameObject.GetComponent<TrailRenderer>().emitting = false;
+        }
     }
 }
