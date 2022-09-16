@@ -6,6 +6,7 @@ public class _IkLook : MonoBehaviour
 {
     Animator anim;
     Camera mainCam;
+    float weight = 1f;
 
     void Start()
     {
@@ -15,9 +16,19 @@ public class _IkLook : MonoBehaviour
 
     private void OnAnimatorIK(int layerIndex)
     {
-        anim.SetLookAtWeight(.6f,.5f,1.2f,.5f,.5f);
+        anim.SetLookAtWeight(weight,.5f,1.2f,.5f,.5f);
 
         Ray lookAtRay = new Ray(transform.position,mainCam.transform.forward);
         anim.SetLookAtPosition(lookAtRay.GetPoint(25));
+    }
+
+    public void Plus()
+    {
+        weight = Mathf.Lerp(weight,1f,Time.fixedDeltaTime);
+    }
+
+    public void Less()
+    {
+        weight = Mathf.Lerp(weight,0,Time.fixedDeltaTime);
     }
 }
