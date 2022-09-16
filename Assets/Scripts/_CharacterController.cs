@@ -41,7 +41,7 @@ public class _CharacterController : MonoBehaviour
 
     void InputMove()
     {
-        Anim.SetFloat("Speed", Vector3.ClampMagnitude(StickDirection, 1).magnitude, damp, Time.deltaTime*10);
+        Anim.SetFloat("speed", Vector3.ClampMagnitude(StickDirection, 1).magnitude, damp, Time.deltaTime*10);
 
     }
 
