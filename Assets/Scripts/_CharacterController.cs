@@ -43,8 +43,6 @@ public class _CharacterController : MonoBehaviour
 
     private void LateUpdate()
     {
-        InputMove();
-        InputRotation();
         Movement();
     }
 
@@ -76,6 +74,10 @@ public class _CharacterController : MonoBehaviour
 
         if(MoveType == MovementType.Directional)
         {
+
+            InputRotation();
+            InputMove();
+
             StickDirection = new Vector3(Inputx, 0,Inputy);
 
             if(Input.GetKey(RunButton))
@@ -87,14 +89,14 @@ public class _CharacterController : MonoBehaviour
                 Inputy = 2* Input.GetAxis("Vertical");
             }
 
-        //      else if(Input.GetKey(WalkButton))
-        //      {
-        //          mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView,normalFov,Time.deltaTime*2);
+            //   else if(Input.GetKey(WalkButton))
+            //   {
+            //       mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView,normalFov,Time.deltaTime*2);
 
-        //          max_speed =0.2f;
-        //          Inputx = Input.GetAxis("Horizontal");
-        //          Inputy = Input.GetAxis("Vertical");
-        //      }
+            //       max_speed =0.2f;
+            //       Inputx = Input.GetAxis("Horizontal");
+            //       Inputy = Input.GetAxis("Vertical");
+            //   }
             else
             {
                 mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView,normalFov,Time.deltaTime*2);
