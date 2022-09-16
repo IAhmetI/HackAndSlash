@@ -46,6 +46,6 @@ public class _WeaponController : MonoBehaviour
     void UnEquip()
     {
         backWeapon.SetActive(true);
-        handWeapon.SetActive(false);    
+        handWeapon.SetActive(false);
     }
 }

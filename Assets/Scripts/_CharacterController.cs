@@ -110,11 +110,10 @@ public class _CharacterController : MonoBehaviour
 
     void InputMove()
     {
-<<<<<<< Updated upstream
+
         Anim.SetFloat("speed", Vector3.ClampMagnitude(StickDirection, max_speed).magnitude, damp, Time.deltaTime*10);
-=======
         Anim.SetFloat("Speed", Vector3.ClampMagnitude(StickDirection, 1).magnitude, damp, Time.deltaTime*10);
->>>>>>> Stashed changes
+
 
     }
 
