@@ -5,7 +5,12 @@ using UnityEngine;
 public class _WeaponController : MonoBehaviour
 {
     bool isStrafe = false;
+
     Animator anim;
+
+    public GameObject handWeapon;
+    public GameObject backWeapon;
+
 
     private void Start()
     {
@@ -30,5 +35,17 @@ public class _WeaponController : MonoBehaviour
         {
             GetComponent<_CharacterController>().MoveType=_CharacterController.MovementType.Directional;
         }
+    }
+
+    void Equip()
+    {
+        backWeapon.SetActive(false);
+        handWeapon.SetActive(true);
+    }
+
+    void UnEquip()
+    {
+        backWeapon.SetActive(true);
+        handWeapon.SetActive(false);    
     }
 }
