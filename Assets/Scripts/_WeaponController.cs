@@ -5,6 +5,7 @@ using UnityEngine;
 public class _WeaponController : MonoBehaviour
 {
     bool isStrafe = false;
+    bool canAttack = true;
 
     Animator anim;
 
@@ -35,6 +36,12 @@ public class _WeaponController : MonoBehaviour
         {
             GetComponent<_CharacterController>().MoveType=_CharacterController.MovementType.Directional;
         }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0) && isStrafe==true && canAttack==true)
+        {
+
+        }
+
     }
 
     void Equip()
