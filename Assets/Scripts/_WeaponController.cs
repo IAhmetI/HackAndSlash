@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class _WeaponController : MonoBehaviour
 {
+    int attackIndex;
     bool isStrafe = false;
     bool canAttack = true;
 
@@ -39,7 +40,9 @@ public class _WeaponController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0) && isStrafe==true && canAttack==true)
         {
-
+            attackIndex = Random.Range(0,3);
+            anim.SetInteger("AttackIndex",attackIndex);
+            anim.SetTrigger("Attack");
         }
 
     }
