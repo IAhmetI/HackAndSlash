@@ -26,7 +26,7 @@ public class _WeaponController : MonoBehaviour
     {
         anim.SetBool("IsStrafe",isStrafe);
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && anim.GetBool("IsAttack") == false)
         {
             isStrafe = !isStrafe;
         }
