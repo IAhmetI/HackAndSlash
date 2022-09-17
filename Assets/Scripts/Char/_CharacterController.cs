@@ -11,7 +11,8 @@ public class _CharacterController : MonoBehaviour
     float normalFov;
     public float runFov;
     public float StrafeTurnSpeed;
-
+    public static int PlayerHealth =100;
+    private int _PlayerHealth;
 
     float Inputx;
     float Inputy;
@@ -39,6 +40,7 @@ public class _CharacterController : MonoBehaviour
         Anim = GetComponent<Animator>();
         mainCam = Camera.main;
         normalFov = mainCam.fieldOfView;
+        _PlayerHealth = PlayerHealth;
     }
 
     private void LateUpdate()
