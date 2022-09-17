@@ -4737,6 +4737,7 @@ GameObject:
   - component: {fileID: 5984410494765657327}
   - component: {fileID: 5984410494764854479}
   - component: {fileID: 5984410494763888143}
+  - component: {fileID: 6413063326582508245}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -4809,6 +4810,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6413063326582508245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984410494766149839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a5bbc811cf65541a81c0a09b04de58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireballthrowspeed: 5
 --- !u!1 &5984410494803418924
 GameObject:
   m_ObjectHideFlags: 0
