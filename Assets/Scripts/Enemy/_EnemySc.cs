@@ -21,6 +21,7 @@ public class _EnemySc : MonoBehaviour
     void Start()
     {
         _EnemyHealth = EnemyHealth;
+        anim = GetComponent<Animator>();
     }
 
 
@@ -29,16 +30,15 @@ public class _EnemySc : MonoBehaviour
         mesafe = Vector3.Distance(transform.position,target.position);
         pos = new Vector3(target.position.x,target.position.y,target.position.z);
 
-        if(mesafe <10f)
+        if(mesafe < 10f)
         {
             transform.LookAt(pos);
             anim.SetBool("IsCombat",true);
 
             if(Physics.Raycast(FlameDir.transform.position,FlameDir.transform.forward,out hit, Menzil));
             {
-                if(hit.transform.tag =="Player" )
+                if(hit.transform.tag == "Player")
                 {
-                    _CharacterController.PlayerHealth -= _damage;
                     Debug.Log(_CharacterController.PlayerHealth);
                 }
                 else
