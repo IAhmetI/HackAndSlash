@@ -8,9 +8,11 @@ public class _FlameEnemy : MonoBehaviour
 
     // private bool _fireballthrow;
 
-    private Vector2 dir;
+    // private Vector2 dir;
     public Transform _throwdirection;    
-    private Vector2 target;
+    // private Vector2 target;
+
+    public float cooldawn;
 
     private float _throwspeed = 0.9f;
     private float _throwspeedactive = 0;
@@ -27,35 +29,32 @@ public class _FlameEnemy : MonoBehaviour
     {
         if (_throwspeedactive > 0)
         {
-            _throwspeedactive -= Time.deltaTime;
+            _throwspeedactive -= Time.deltaTime / 3;
         }
 
-        if (_throwspeedactive <= 0)
+        if(_EnemySc.IsCombat)
         {
-            // _fireballthrow = true;
-            GameObject go = Instantiate(_Fireball, _throwdirection.transform.position,new Quaternion());
-            // GameObject go = Instantiate(_Fireball, FireBallAim.dir.transform.position,new Quaternion());
-
-            if (transform.localScale.x < 0)
+            if (_throwspeedactive <= 0)
             {
-                go.GetComponent<_Fireballsc>().fireball_left();
+                // _fireballthrow = true;
+                GameObject go = Instantiate(_Fireball, _throwdirection.transform.position,new Quaternion());
+                // GameObject go = Instantiate(_Fireball, FireBallAim.dir.transform.position,new Quaternion());
+
+                if (transform.localScale.x < 0)
+                {
+                    go.GetComponent<_Fireballsc>().fireball_left();
+                }
+
+                _throwspeedactive = _throwspeed;
             }
-
-            _throwspeedactive = _throwspeed;
         }
-
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        target = player.transform.position;
-
-        dir = target;
-
-        transform.right = dir;
-
+        // GameObject player = GameObject.FindGameObjectWithTag("Player");
+        // target = player.transform.position;
+        // dir = target;
+        // transform.right = dir;
         // else
         // {
         //     _fireballthrow=false;
         // }
-
     }
 }

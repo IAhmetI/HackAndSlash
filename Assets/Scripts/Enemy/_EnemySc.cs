@@ -11,6 +11,7 @@ public class _EnemySc : MonoBehaviour
     public static int EnemyHealth = 100;
     private int _EnemyHealth;
     public int _damage;
+    public static bool IsCombat;
 
     Vector3 pos;
 
@@ -32,24 +33,26 @@ public class _EnemySc : MonoBehaviour
 
         if(mesafe < 10f)
         {
+            IsCombat = true;
             transform.LookAt(pos);
-            anim.SetBool("IsCombat",true);
+            anim.SetBool("IsCombat",IsCombat);
 
-            if(Physics.Raycast(FlameDir.transform.position,FlameDir.transform.forward,out hit, Menzil));
-            {
-                if(hit.transform.tag == "Player")
-                {
-                    Debug.Log(_CharacterController.PlayerHealth);
-                }
-                else
-                {
-                    Debug.Log("Iska");
-                }
-            }
+            // if(Physics.Raycast(FlameDir.transform.position,FlameDir.transform.forward,out hit, Menzil));
+            // {
+            //     if(hit.transform.tag == "Player")
+            //     {
+            //         Debug.Log(_CharacterController.PlayerHealth);
+            //     }
+            //     else
+            //     {
+            //         Debug.Log("Iska");
+            //     }
+            // }
         }
         else
         {   
-            anim.SetBool("IsCombat",false);
+            IsCombat = false;
+            anim.SetBool("IsCombat",IsCombat);
         }
     }
 }
