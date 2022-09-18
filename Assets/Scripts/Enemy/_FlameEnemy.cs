@@ -32,10 +32,10 @@ public class _FlameEnemy : MonoBehaviour
             {
                 GameObject go = Instantiate(_Fireball, _throwdirection.transform.position,new Quaternion());
                 _Fireballsc _fireball = go.GetComponent<_Fireballsc>();
-                if(_fireball != null)
-                {
-                    _fireball.Seek(_target);
-                }
+                // if(_fireball != null)
+                // {
+                //     _fireball.Seek(target);
+                // }
                 _throwspeedactive = _throwspeed;
 
                 // _fireballthrow = true;
