@@ -4752,15 +4752,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5984410494766149839}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.605, y: 1.442, z: 23.795}
-  m_LocalScale: {x: 0.67181, y: 0.67181, z: 0.67181}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -1.8036766, y: -2.8012407, z: 30.604246}
+  m_LocalScale: {x: 1.0865551, y: 1.0865551, z: 1.0865551}
   m_Children:
   - {fileID: 5984410494345914970}
   - {fileID: 5984410494803418927}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &5984410494764854479
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4822,7 +4822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a5bbc811cf65541a81c0a09b04de58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireballthrowspeed: 5
+  _fireballthrowspeed: 30
 --- !u!1 &5984410494803418924
 GameObject:
   m_ObjectHideFlags: 0
