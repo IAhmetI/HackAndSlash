@@ -9,7 +9,8 @@ public class _FlameEnemy : MonoBehaviour
     // private bool _fireballthrow;
 
     // private Vector2 dir;
-    public Transform _throwdirection;    
+    public Transform _throwdirection;   
+    public static Transform throwdirection; 
     // private Vector2 target;
 
     public float cooldawn;
@@ -22,6 +23,7 @@ public class _FlameEnemy : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        throwdirection = _throwdirection;
     }
 
 

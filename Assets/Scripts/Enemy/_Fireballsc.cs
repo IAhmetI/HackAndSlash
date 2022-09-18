@@ -13,7 +13,7 @@ public class _Fireballsc : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3 (_fireballthrowspeed*Time.fixedDeltaTime, 0, 0);
+        transform.position = new Vector3 (0, 0, _fireballthrowspeed*-Time.deltaTime);
     }
 
     public void fireball_left()
